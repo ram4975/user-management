@@ -5,3 +5,9 @@ export const updateSearchValue = (searchValue) => {
         searchValue: searchValue,
     }
 }
+
+export const listSearchResult = () => {
+   return {
+        type: 'LIST_SEARCH_RESULT'
+    }
+}

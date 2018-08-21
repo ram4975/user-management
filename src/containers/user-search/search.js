@@ -1,13 +1,14 @@
 import {connect} from 'react-redux'
 import SearchComponent from '../../components/user-search/search-component'
-import {updateSearchValue} from '../../actions/user-action'
+import {updateSearchValue, listSearchResult} from '../../actions/user-action'
 
 
 // Map Redux state to component props
 function mapStateToProps(state) {
     console.log('State in mapStateToProps', state);
     return {
-        searchValue: state.searchValue
+        searchValue: state.searchValue,
+        userList: state.userList
     }
 }
 
@@ -16,6 +17,9 @@ function mapDispatchToProps(dispatch) {
     return {
         onUpdateSearch: event => dispatch((
             updateSearchValue(event.target.value)
+        )),
+        listSearchResult: () => dispatch((
+            listSearchResult()
         ))
     }
 }
