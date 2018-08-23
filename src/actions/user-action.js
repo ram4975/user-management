@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const updateSearchValue = (searchValue) => {
     console.log('Search Action called');
     return {
@@ -7,7 +9,17 @@ export const updateSearchValue = (searchValue) => {
 }
 
 export const listSearchResult = () => {
-   return {
+   /*return {
         type: 'LIST_SEARCH_RESULT'
+
+    }*/
+
+    const fetchUsers = axios.get('http://localhost:3000/users');
+
+    return (dispatch) => {
+        fetchUsers.then( (payload)=> {
+            dispatch({type: 'LIST_SEARCH_RESULT', userList: payload.data})
+        })
     }
+
 }

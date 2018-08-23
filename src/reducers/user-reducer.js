@@ -6,7 +6,8 @@ export default function userResucer(state , action){
             newState.searchValue = action.searchValue;
             return newState;
         case 'LIST_SEARCH_RESULT':
-            newState.userList = ['Bob Smith', 'Tom Smith']
+            //newState.userList = ['Bob Smith', 'Tom Smith']
+            newState.userList = action.userList;
             return newState;
         default:
             return state;

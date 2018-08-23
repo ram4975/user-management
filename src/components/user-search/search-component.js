@@ -6,7 +6,9 @@ import PropTypes from 'prop-types'
 class SearchResult extends Component {
     render() {
         return(
-        <span>{this.props.name}</span>
+        <div>
+            <span>{this.props.name}</span>
+        </div>
         )
     }
 }
