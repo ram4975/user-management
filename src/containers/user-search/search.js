@@ -8,7 +8,8 @@ function mapStateToProps(state) {
     console.log('State in mapStateToProps', state);
     return {
         searchValue: state.searchValue,
-        userList: state.userList
+        userList: state.userList,
+        alert: state.alert
     }
 }
 

@@ -13,6 +13,16 @@ class SearchResult extends Component {
     }
 }
 
+class Alert extends Component {
+    render() {
+        return(
+        <div>
+            <span>{this.props.alertMessage}</span>
+        </div>
+        )
+    }
+}
+
 export default class Search extends Component {
     render() {
         const {searchValue,onUpdateSearch,listSearchResult,userList} = this.props
@@ -29,6 +39,7 @@ export default class Search extends Component {
                 <div>
                     {results}
                 </div>
+                <Alert alertMessage={this.props.alert} />
             </div>
         )
     }
