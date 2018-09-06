@@ -5,6 +5,10 @@ export default class CounterButton extends Component {
         super(props)
     }
 
+    componentDidUpdate(prevProps, previousState) {
+        console.log('This is previous props in componentDidUpdate : ', prevProps);
+    }
+
     render(){
         let buttonText = this.props.type === 'I' ? '+' : '-';
         return(
